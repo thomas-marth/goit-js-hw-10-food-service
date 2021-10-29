@@ -15,7 +15,7 @@ menuContainerRef.insertAdjacentHTML('beforeend', createMenuMarkup);
 const toggleSwitch = document.querySelector('#theme-switch-toggle');
 const bodyStyle = document.body.classList;
 
-setDarkTheme();
+setSavedTheme();
 toggleSwitch.addEventListener('change', onToggleTheme);
 
 function onToggleTheme(e) {
@@ -25,7 +25,7 @@ function onToggleTheme(e) {
   localStorage.setItem('theme', bodyStyle.value);
 }
 
-function setDarkTheme() {
+function setSavedTheme() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     bodyStyle.add(savedTheme);
